@@ -36,7 +36,7 @@ For this <b>House Price Prediction</b> project, I leveraged several key tools an
 - Examined distributions of numerical variables
 
 View my notebook with detailed steps here:
-[1_Exploratory_Data_Analysis.ipynb](Project_Files\1_Exploratory_Data_Analysis.ipynb)
+[1_Exploratory_Data_Analysis.ipynb](Project_Files/1_Exploratory_Data_Analysis.ipynb)
 
 ### Data Visualization
 <b>Distribution of House Prices (Before & After Cleaning)</b>
@@ -56,7 +56,7 @@ View my notebook with detailed steps here:
 
 ### <b>Result</b>
 
-![Before & After Data Cleaning](Images\1_EDA_Before_&_After_Data_Cleaning.png) 
+![Before & After Data Cleaning](Images/1_EDA_Before_&_After_Data_Cleaning.png) 
 *Before & After Data Cleaning*
 
 ### Insights
