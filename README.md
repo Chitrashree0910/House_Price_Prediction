@@ -4,7 +4,7 @@ This project focuses on predicting house prices using data-driven techniques. It
 ## Tools & Technologies Used
 For this <b>House Price Prediction</b> project, I leveraged several key tools and technologies to explore, analyze, and model the data effectively:
 - <b>Python</b>: The core programming language used for data analysis, visualization, and machine learning
-    - <b>Pandas</b>: Used for data manipul  ation, handling missing values, and performing exploratory data analysis (EDA)
+    - <b>Pandas</b>: Used for data manipulation, handling missing values, and performing exploratory data analysis (EDA)
     - <b>NumPy</b>: Assisted in numerical computations and handling arrays efficiently
     - <b>Matplotlib</b>: Created visual representations of the data to identify patterns and trends
     - <b>Seaborn</b>: Enhanced data visualization with more advanced plots and statistical insights
@@ -113,7 +113,7 @@ Detailed steps can be found in my notebook:
 [3_Model_Selection_Training.ipynb](Project_Files/3_Model_Selection_Training.ipynb)
 
 ### Performance Metrics
-<b>Final VIF values after removing high multicollinearity features:</b>
+<b>Model Evaluation results after removing high multicollinearity features:</b>
 
 ```python
 from sklearn.metrics import mean_absolute_error, r2_score
