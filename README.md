@@ -17,13 +17,9 @@ For this <b>House Price Prediction</b> project, I leveraged several key tools an
 
 <b>Step 2</b>: Feature Selection
 
-<b>Step 3</b>: Model Selection & Training
+<b>Step 3</b>: Model Training & Evaluation
 
-<b>Step 4</b>: Model Evaluation
-
-<b>Step 5</b>: Model Optimization
-
-<b>Step 6</b>: Deployment
+<b>Step 4</b>: Deployment
 
 ## Step 1: Exploratory Data Analysis (EDA)
 ### Data Analysis
@@ -105,3 +101,66 @@ print(vif_data)
 - <b>Highly correlated features</b> were removed to prevent redundancy and overfitting
 - <b>VIF reduction</b> ensures the dataset is free from multicollinearity, leading to better model performance
 - <b>Final feature set</b> is optimized for predictive modeling, improving interpretability and accuracy
+
+## Step 3: Model Training & Evaluation
+### Model Analysis
+- Used Linear Regression as the base model
+- Split the dataset into training (80%) and testing (20%)
+- Trained the model using Scikit-Learn’s LinearRegression
+- Evaluated performance using Mean Absolute Error (MAE) and R² Score
+
+### Model Optimization
+- <b>Feature scaling</b> improved model performance
+- Regularization techniques like <b>Ridge Regression</b> could be explored
+
+View my notebook with detailed steps here:
+[3_Model_Selection_Training.ipynb](Project_Files\3_Model_Selection_Training.ipynb)
+
+### Performance Metrics
+<b>Final VIF values after removing high multicollinearity features:</b>
+
+```python
+from sklearn.metrics import mean_absolute_error, r2_score
+
+mae = mean_absolute_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+print(f"Mean Absolute Error: {mae}")
+print(f"R² Score: {r2}")
+```
+### <b>Result</b>
+
+- Mean Absolute Error: 23231.73
+- R² Score: 0.8011
+
+### Insights
+- The model performed well on numerical features but can be improved by incorporating location-based features
+- Adding more advanced regression techniques could enhance accuracy
+
+## Step 4: Predictions & Future Improvements
+### Making Predictions on New Data
+```python
+new_data = pd.DataFrame([
+    [7, 856, 706, 854, 0, 192, 1, 65.0, 7, 84, 2],  # First house
+    [5, 1262, 0, 0, 108, 0, 0, 80.0, 5, 0, 1]       # Second house
+], columns=X_train_optimized.columns)
+
+predictions = model.predict(new_data)
+new_data['Predicted_SalePrice'] = predictions
+print(new_data)
+```
+### <b>Result</b>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|2ndFlrSF | WoodDeckSF | OpenPorchSF | LotFrontage | BsmtFinSF1 | Fireplaces | MasVnrArea | TotRmsAbvGrd | FullBath | TotalBsmtSF | OverallQual | Predicted_SalePrice  |
+|       7 |        856 |        706  |        854  |         0  |       192  |         1  |        65.0  |       7  |         84  |          2  |       1.949961e+06   |
+|       5 |      1262  |         0   |         0   |       108  |        0   |         0  |        80.0  |       5  |          0  |          1  |       3.047532e+05   |
+|         |            |             |             |            |            |            |              |          |             |             |                      |            
+
+### Future Plans for Improvement
+- Include location-based features (e.g., zip code, neighborhood, proximity to amenities)
+- Experiment with different models such as Random Forest and Gradient Boosting
+- Use Feature Engineering to create additional meaningful features
+- Deploy the model as a web app using Flask or FastAPI
+
+## Conclusion
+
+This project demonstrates a <b>basic yet effective</b> house price prediction model using Linear Regression. While the model performs well based on the selected features, future improvements can be made by incorporating <b>location-based data</b> and exploring more advanced ML techniques. The structured approach ensures a solid foundation for future enhancements.
