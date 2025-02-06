@@ -114,7 +114,7 @@ print(vif_data)
 - Regularization techniques like <b>Ridge Regression</b> could be explored
 
 View my notebook with detailed steps here:
-[3_Model_Selection_Training.ipynb](Project_Files\3_Model_Selection_Training.ipynb)
+[3_Model_Selection_Training.ipynb](Project_Files/3_Model_Selection_Training.ipynb)
 
 ### Performance Metrics
 <b>Final VIF values after removing high multicollinearity features:</b>
@@ -147,13 +147,7 @@ new_data = pd.DataFrame([
 predictions = model.predict(new_data)
 new_data['Predicted_SalePrice'] = predictions
 print(new_data)
-```
-### <b>Result</b>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|2ndFlrSF | WoodDeckSF | OpenPorchSF | LotFrontage | BsmtFinSF1 | Fireplaces | MasVnrArea | TotRmsAbvGrd | FullBath | TotalBsmtSF | OverallQual | Predicted_SalePrice  |
-|       7 |        856 |        706  |        854  |         0  |       192  |         1  |        65.0  |       7  |         84  |          2  |       1.949961e+06   |
-|       5 |      1262  |         0   |         0   |       108  |        0   |         0  |        80.0  |       5  |          0  |          1  |       3.047532e+05   |
-|         |            |             |             |            |            |            |              |          |             |             |                      |            
+```     
 
 ### Future Plans for Improvement
 - Include location-based features (e.g., zip code, neighborhood, proximity to amenities)
