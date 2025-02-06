@@ -1,10 +1,10 @@
 # Overview
-This project aims to predict house prices based on various features such as location, size, number of rooms, and other attributes. Using Linear Regression, we build a predictive model that estimates house prices based on historical data. The project follows a structured Machine Learning workflow, covering data preprocessing, feature engineering, model training, and evaluation.
+This project focuses on predicting house prices using data-driven techniques. It involves data preprocessing, exploratory data analysis, feature selection, and applying Linear Regression for predictive modeling. The goal is to analyze key housing attributes and estimate prices based on historical data.
 
 ## Tools & Technologies Used
 For this <b>House Price Prediction</b> project, I leveraged several key tools and technologies to explore, analyze, and model the data effectively:
 - <b>Python</b>: The core programming language used for data analysis, visualization, and machine learning
-    - <b>Pandas</b>: Used for data manipulation, handling missing values, and performing exploratory data analysis (EDA)
+    - <b>Pandas</b>: Used for data manipul  ation, handling missing values, and performing exploratory data analysis (EDA)
     - <b>NumPy</b>: Assisted in numerical computations and handling arrays efficiently
     - <b>Matplotlib</b>: Created visual representations of the data to identify patterns and trends
     - <b>Seaborn</b>: Enhanced data visualization with more advanced plots and statistical insights
@@ -19,7 +19,7 @@ For this <b>House Price Prediction</b> project, I leveraged several key tools an
 
 <b>Step 3</b>: Model Training & Evaluation
 
-<b>Step 4</b>: Deployment
+<b>Step 4</b>: Predictions & Future Improvements
 
 ## Step 1: Exploratory Data Analysis (EDA)
 ### Data Analysis
@@ -29,7 +29,7 @@ For this <b>House Price Prediction</b> project, I leveraged several key tools an
 - Identified and removed duplicate rows
 - Examined distributions of numerical variables
 
-View my notebook with detailed steps here:
+Detailed steps can be found in my notebook:
 [1_Exploratory_Data_Analysis.ipynb](Project_Files/1_Exploratory_Data_Analysis.ipynb)
 
 ### Data Visualization
@@ -63,11 +63,11 @@ View my notebook with detailed steps here:
 ## Step 2: Feature Selection
 ### Feature Analysis
 - Identified categorical columns and applied One-Hot Encoding to convert them into numerical features
-- Computed correlation with SalePrice and selected features with an absolute correlation ≥ 0.3
+- Computed correlation with "SalePrice" and selected features with an absolute correlation <b>≥ 0.3</b>
 - Removed weakly correlated features to retain only the most relevant ones
-- Checked for multicollinearity using Variance Inflation Factor (VIF) and iteratively dropped features with VIF > 5 to ensure model stability
+- Checked for <b>multicollinearity</b> using <b>Variance Inflation Factor (VIF)</b> and iteratively dropped features with <b>VIF > 5</b> to ensure model stability
 
-View my notebook with detailed steps here:
+Detailed steps can be found in my notebook:
 [2_Feature_Selection.ipynb](Project_Files/2_Feature_Selection.ipynb)
 
 ### Data Visualization
@@ -98,22 +98,18 @@ print(vif_data)
 | ...            | ...  |
 
 ### Insights
-- <b>Highly correlated features</b> were removed to prevent redundancy and overfitting
+- By removing <b>highly correlated features</b>, the model avoids redundancy and potential overfitting
 - <b>VIF reduction</b> ensures the dataset is free from multicollinearity, leading to better model performance
 - <b>Final feature set</b> is optimized for predictive modeling, improving interpretability and accuracy
 
 ## Step 3: Model Training & Evaluation
 ### Model Analysis
 - Used Linear Regression as the base model
-- Split the dataset into training (80%) and testing (20%)
-- Trained the model using Scikit-Learn’s LinearRegression
-- Evaluated performance using Mean Absolute Error (MAE) and R² Score
+- Split the dataset into <b>training (80%)</b> and <b>testing (20%)</b>
+- Trained the model using <b>Scikit-Learn’s LinearRegression</b>
+- Evaluated performance using <b>Mean Absolute Error (MAE)</b> and <b>R² Score</b>
 
-### Model Optimization
-- <b>Feature scaling</b> improved model performance
-- Regularization techniques like <b>Ridge Regression</b> could be explored
-
-View my notebook with detailed steps here:
+Detailed steps can be found in my notebook:
 [3_Model_Selection_Training.ipynb](Project_Files/3_Model_Selection_Training.ipynb)
 
 ### Performance Metrics
@@ -136,8 +132,13 @@ print(f"R² Score: {r2}")
 - The model performed well on numerical features but can be improved by incorporating location-based features
 - Adding more advanced regression techniques could enhance accuracy
 
+### Model Optimization
+- <b>Feature scaling</b> improved model performance
+- Future improvements could include exploring <b>Ridge/Lasso regression</b> to handle multicollinearity
+
 ## Step 4: Predictions & Future Improvements
 ### Making Predictions on New Data
+To test the model on unseen data, I provided sample inputs and obtained predictions as follows:
 ```python
 new_data = pd.DataFrame([
     [7, 856, 706, 854, 0, 192, 1, 65.0, 7, 84, 2],  # First house
